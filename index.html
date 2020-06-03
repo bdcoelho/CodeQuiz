@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Code Quiz</title>
+
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+    <link
+      rel="shortcut icon"
+      type="image/png"
+      href="./assets/images/quiz.png"
+    />
+  </head>
+
+  <body>
+    <h1 class="center-heading">
+      Code Quiz!
+    </h1>
+    <div class="center-panel">
+      <a href="hscores.html">High Scores</a>
+
+      <br /><br />
+    </div>
+
+
+
+
+    <!-- the progress bar and countdown timer -->
+    <div class="container fluid">
+      <div class="row">
+        <div class="col-sm-12 col-md-9 main-column img-responsive">
+          <div class="row internal-row">
+            <div id="counter">60 Seconds</div>
+            <progress value="0" max="60" id="progressBar"></progress>
+            <div id="score">Score : 0</div>
+
+            <p id="FrontInfoBox">
+              Answer the following code-related questions within the time limit.
+              <br /><br />
+              A five second penalty will be applied for each wrong answer
+            </p>
+
+
+
+
+
+            <div id="gameContent">
+
+              <div id="saveScore">
+                <p>
+                  High Score - Enter Initials :
+                  <input type="text" id="initials"/>
+                </p>
+              </div>
+  
+              <button
+                type="button"
+                class="btn btn-light buttonMove"
+                id="startGameButton"
+              >
+                Play Game
+              </button>
+
+
+              <br><br>
+
+              </div>
+
+
+
+
+              <div id="quizContent">
+                <div id="questionNumber" class="gameFontQuestionTitle"></div>
+                <div id="question-title" class="directionFont"></div>
+    
+                <div id="choices" class="directionFont buttonsOver"></div>
+    
+                <div id="questions" class="hide">
+                  <div
+                    id="result"
+                    style="visibility: hidden;"
+                  ></div>
+                </div>
+              </div>
+
+              
+            </div>
+
+        </div>
+      </div>
+      <!-- text stuff content used for questions and notification -->
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/questions-array.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  </body>
+</html>

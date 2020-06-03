@@ -1,0 +1,39 @@
+body {
+  line-height: unset;
+  background-color: rgb(24, 29, 33);
+  color: rgb(0, 255, 255);
+}
+
+#progressBar {
+  width: 30%;
+}
+
+.center-heading {
+  text-align: center;
+}
+
+.main-column {
+  background: url("../images/Quiz3.png");
+border-radius: 3%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin: auto;
+height: 550px;
+  font-size: 120%;
+}
+
+.internal-row {
+  margin: 12%;
+}
+
+
+
+.gameoverflash {
+  overflow: hidden;
+  color: rgb(0, 255, 255);
+  height: fit-content;
+  font-size: 200%;
+  font-family: 'Countdown';
+  font-weight: normal;
+  font-style: normal;
+}
