@@ -51,3 +51,21 @@ font-weight: bolder;
   color: red;
   font-weight: bolder;
   }
+  .default-hidden{
+    visibility: hidden;
+  }
+
+  .default-visible{
+    visibility: visible;
+  }
+
+
+  .no-display{
+    display: none;
+  }
+
+
+
+
+
+

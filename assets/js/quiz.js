@@ -6,6 +6,7 @@ var responseBox = document.querySelector("#result");
 var playerScore = document.getElementById("score").innerHTML;
 var score = 0;
 var gameOver = false;
+var timer;
 
 var timerRunningFunction = function () {
   // Game end time criterion
@@ -22,15 +23,30 @@ var timerRunningFunction = function () {
       .setAttribute("class", "gameOver");
     document.querySelector("#result").style = "visibility:hidden;";
     questionIndex = 0;
-
-
-
-    
     document.getElementById("saveScore").style = "visibility:visible";
+
+  }else{
+
+    document.getElementById("saveScore").style = "visibility:hidden;";
+    console.log("asdfdasf");
   }
+
+
+
+
+  // document.getElementById("saveScore").style.visibility="hidden"
+
+
+
+
+
+
 
   if (timeLeft > 0) {
     timeLeft--;
+  }
+  else{
+    clearInterval(timer)
   }
 
   document.getElementById("progressBar").value = 60 - timeLeft + 1;
@@ -141,6 +157,12 @@ function parseDate() {
 
 function startGame() {
   // check to see if the input field is ready.
+  // hide front info
+
+
+
+  document.querySelector("#FrontInfoBox").setAttribute("class", "no-display")
+
   var userinput = document.getElementById("initials").value;
 
   // check if user has populated the input field
