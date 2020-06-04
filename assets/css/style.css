@@ -6,11 +6,19 @@ body {
 
 #progressBar {
   width: 30%;
+margin-left: 35%;
 }
 
 .center-heading {
   text-align: center;
 }
+
+
+.center-text {
+  text-align: center;
+}
+
+
 
 .main-column {
   background: url("../images/Quiz3.png");
@@ -23,7 +31,7 @@ height: 550px;
 }
 
 .internal-row {
-  margin: 12%;
+
 }
 
 
