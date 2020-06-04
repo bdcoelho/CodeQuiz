@@ -28,7 +28,7 @@ height: 550px;
 
 
 
-.gameoverflash {
+.gameOver {
   overflow: hidden;
   color: rgb(0, 255, 255);
   height: fit-content;
@@ -37,3 +37,17 @@ height: 550px;
   font-weight: normal;
   font-style: normal;
 }
+
+.center-button{
+margin: auto 50%;
+}
+
+.correct{
+color: green;
+font-weight: bolder;
+}
+
+.incorrect{
+  color: red;
+  font-weight: bolder;
+  }

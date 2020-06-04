@@ -2,60 +2,43 @@
 
 var timeLeft = 60;
 var questionIndex = 0;
-var responseBox = document.getElementById("result");
+var responseBox = document.querySelector("#result");
 var playerScore = document.getElementById("score").innerHTML;
 var score = 0;
 var gameOver = false;
 
-
-
-
-
-
 var timerRunningFunction = function () {
-// Game end time criterion
-// Hide quiz content
+  // Game end time criterion
+  // Hide quiz content
 
-    if (timeLeft < 1) {
-      gameOver = true;
-      document.querySelector("#quizContent").style = "visibility:hidden";
-      document.getElementById("gameContent").style = "display:block";
-      document.querySelector("#FrontInfoBox").innerHTML =
-        "GAME OVER <br> Final Score : " + score;
-      document
-        .querySelector("#FrontInfoBox")
-        .setAttribute("class", "gameoverflash");
-
-
-
-
+  if (timeLeft < 1) {
+    gameOver = true;
+    document.querySelector("#quizContent").style = "visibility:hidden";
+    document.querySelector("#gameContent").style = "display:block";
+    document.querySelector("#FrontInfoBox").innerHTML =
+      "GAME OVER <br> Your Final Score : " + score;
+    document
+      .querySelector("#FrontInfoBox")
+      .setAttribute("class", "gameOver");
+    document.querySelector("#result").style = "visibility:hidden;";
+    questionIndex = 0;
 
 
 
+    
+    document.getElementById("saveScore").style = "visibility:visible";
+  }
 
-        
-      document.getElementById("startGameButton").style = "margin-left:0%;";
-      document.getElementById("result").style = "visibility:hidden;";
-      questionIndex = 0;
-      document.getElementById("saveScore").style = "visibility:visible";
+  if (timeLeft > 0) {
+    timeLeft--;
+  }
 
-      
-    }
-
-    if (timeLeft > 0) {
-      timeLeft--;
-    }
-
-
-
-    document.getElementById("progressBar").value = 60 - timeLeft + 1;
-    document.getElementById("counter").innerText = timeLeft + " seconds";
-  };
-
-
+  document.getElementById("progressBar").value = 60 - timeLeft + 1;
+  document.getElementById("counter").innerText = timeLeft + " seconds";
+};
 
 function timerFunction() {
-timerRunningFunction()
+  timerRunningFunction();
   timer = setInterval(timerRunningFunction, 1000);
 }
 
@@ -119,10 +102,10 @@ function questionClickFunction() {
       document.getElementById("counter").classList.remove("explode");
     }, 1000);
 
-    responseBox.setAttribute("style", "color:red");
+    responseBox.setAttribute("class", "incorrect");
     responseBox.textContent = "Wrong!";
   } else {
-    responseBox.setAttribute("style", "color:green");
+    responseBox.setAttribute("class", "correct");
     responseBox.textContent = "Correct!";
     score = score + 1;
     document.getElementById("score").innerHTML = "Score : " + score;
@@ -157,7 +140,6 @@ function parseDate() {
 }
 
 function startGame() {
-
   // check to see if the input field is ready.
   var userinput = document.getElementById("initials").value;
 
@@ -189,11 +171,7 @@ function startGame() {
   document.querySelector("#quizContent").style = "visibility:visible";
   document.querySelector("#gameContent").style = "display:none";
 
-
-
   timerFunction();
-
-
 
   rollQuestions();
 }
@@ -201,6 +179,5 @@ function startGame() {
 // add event listeners
 
 startGameButton.addEventListener("click", startGame, false);
-
 
 // TODO Submit after enter initials, not play game
