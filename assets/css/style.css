@@ -12,13 +12,43 @@ margin-left: 35%;
 .center-heading {
   text-align: center;
 }
+.intro-list{
+margin-top: 3%;
+
+}
+
+
+li {
+  line-height: 1.5;
+  list-style-type: circle;
+
+}
+
+
+
+
+.left-text{
+
+text-align: left;
+
+}
+
+
+.right-text{
+text-align: right;
+}
+
+
 
 
 .center-text {
   text-align: center;
 }
 
-
+.intro-text{
+margin: auto 15%;
+margin-top: 5%;
+}
 
 .main-column {
   background: url("../images/Quiz3.png");

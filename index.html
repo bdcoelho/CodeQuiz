@@ -21,54 +21,72 @@
     <h1 class="center-heading">
       Code Quiz!
     </h1>
-    <div class="center-panel">
-      <a href="highscores.html">High Scores</a>
 
-      <br /><br />
-    </div>
+
+
 
     <!-- the progress bar and countdown timer -->
     <div class="container fluid">
       <div class="row">
         <div class="col-sm-12 col-md-9 main-column img-responsive">
-
-
-
-
           <div class="row">
             <div class="col-sm-12">
               <div id="counter" class="center-text">60 Seconds</div>
-              </div>
+            </div>
           </div>
-
-
 
           <div class="row">
             <div class="col-sm-12">
-            <progress value="0" max="60" id="progressBar"></progress>
+              <progress value="0" max="60" id="progressBar"></progress>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-sm-12 intro-text">
+              Are you ready to test your coding knowledge?
+              <ul id="FrontInfoBox" class="default-visible intro-list">
+                <li>Click Play to begin.</li>
+                <li>Answer as many questions as possible!</li>
+                <li>
+                  A five second penalty is applied for each incorrect
+                  answer
+                </li>
+              </ul>
             </div>
           </div>
 
 
 
 
+          <div class="row">
+            <div class="col-sm-12 center-text">
+          <button
+            type="button"
+            class="btn btn-light"
+            id="startGmeButton"
+          >
+            Play!
+          </button>
+
+          </div>
+</div>
 
           <div class="row">
-            <div class="col-sm-12">
-              <p id="FrontInfoBox" class="default-visible intro-text">
-              Answer the following code-related questions within the time limit.
-              <br /><br />
-              A five second penalty will be applied for each wrong answer
-            </p>
-
+            <div class="col-sm-6 left-text">
+              <div id="score">Score : 0</div>
+          </div>
+          
+          <div class="col-sm-6 right-text">
+            <a href="highscores.html">High Scores</a>
+          </div>
+          
+          </div>
 </div>
 
 
-          </div>
 
-          <div class="row">
-            <div id="score">Score : 0</div>
-          </div>
+
+
 
           <div id="gameContent">
             <div id="saveScore" class="default-hidden">
@@ -78,13 +96,6 @@
               </p>
             </div>
             <br />
-            <button
-              type="button"
-              class="btn btn-light center-button"
-              id="startGameButton"
-            >
-              Play Game
-            </button>
 
             <br /><br />
           </div>
