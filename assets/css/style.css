@@ -1,66 +1,59 @@
 body {
-  line-height: unset;
-  background-color: rgb(24, 29, 33);
+  background-color: rgb(58, 70, 80);
   color: rgb(0, 255, 255);
+  height: 100%;
 }
 
 #progressBar {
   width: 30%;
-margin-left: 35%;
+  margin-left: 35%;
 }
 
 .center-heading {
-  text-align: center;
-}
-.intro-list{
-margin-top: 3%;
-
+margin: auto;
+padding-top: 3%;
+padding-bottom: 3%;
 }
 
+.intro-list {
+  margin-top: 3%;
 
+}
+.intro{
+margin: auto 14%;
+
+}
 li {
   line-height: 1.5;
   list-style-type: circle;
-
 }
 
-
-
-
-.left-text{
-
-text-align: left;
-
+.bottom-text{
+  text-align: center;
+  padding-top: 3%;
+  padding-bottom: 3%;
 }
-
-
-.right-text{
-text-align: right;
-}
-
-
-
 
 .center-text {
   text-align: center;
-}
-
-.intro-text{
-margin: auto 15%;
-margin-top: 5%;
-}
-
-.main-column {
-  background: url("../images/Quiz3.png");
-border-radius: 3%;
-  background-size: contain;
-  background-repeat: no-repeat;
-  margin: auto;
-height: 550px;
+  margin-top: 3%;
   font-size: 120%;
 }
 
-.internal-row {
+.row-offset{
+padding-top: 10%;
+}
+
+
+
+.intro-text {
+  margin-top: 5%;
+  font-size: 150%;
+}
+
+.main-column {
+  background-color: rgb(24, 29, 33);
+  border-radius: 3%;
 
 }
 
@@ -71,39 +64,55 @@ height: 550px;
   color: rgb(0, 255, 255);
   height: fit-content;
   font-size: 200%;
-  font-family: 'Countdown';
+  font-family: "Countdown";
   font-weight: normal;
   font-style: normal;
 }
 
-.center-button{
-margin: auto 50%;
+.center-button {
+  margin: auto 50%;
 }
 
-.correct{
-color: green;
-font-weight: bolder;
+.correct {
+  color: green;
+  font-weight: bolder;
 }
 
-.incorrect{
+.incorrect {
   color: red;
   font-weight: bolder;
-  }
-  .default-hidden{
-    visibility: hidden;
-  }
+}
+.default-hidden {
+  visibility: hidden;
+}
 
-  .default-visible{
-    visibility: visible;
-  }
+.default-visible {
+  visibility: visible;
+}
 
-
-  .no-display{
-    display: none;
-  }
-
+.no-display {
+  display: none;
+}
 
 
 
+a:link {
+  color: rgb(0, 255, 255);
+
+}
 
 
+/* mouse over link */
+a:hover {
+  color: blue;
+}
+
+/* selected link */
+a:active {
+  color: rgb(0, 255, 255);
+}
+
+.customButton{
+margin: 1%;
+
+}

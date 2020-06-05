@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Code Quiz</title>
-
     <link
       rel="stylesheet"
       href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
@@ -18,17 +17,25 @@
   </head>
 
   <body>
-    <h1 class="center-heading">
-      Code Quiz!
-    </h1>
+
 
 
 
 
     <!-- the progress bar and countdown timer -->
     <div class="container fluid">
+
       <div class="row">
-        <div class="col-sm-12 col-md-9 main-column img-responsive">
+
+        <h1 class="center-heading">
+          Code Quiz!
+        </h1>
+    
+
+      </div>
+
+      <div class="row">
+        <div class="col-sm-12 col-md-8 offset-md-2 main-column">
           <div class="row">
             <div class="col-sm-12">
               <div id="counter" class="center-text">60 Seconds</div>
@@ -41,9 +48,10 @@
             </div>
           </div>
 
-          <div class="row">
+          <div class="row intro">
             <div class="col-sm-12 intro-text">
               Are you ready to test your coding knowledge?
+            </div>
               <ul id="FrontInfoBox" class="default-visible intro-list">
                 <li>Click Play to begin.</li>
                 <li>Answer as many questions as possible!</li>
@@ -52,40 +60,8 @@
                   answer
                 </li>
               </ul>
-            </div>
-          </div>
-
-
-
-
-          <div class="row">
-            <div class="col-sm-12 center-text">
-          <button
-            type="button"
-            class="btn btn-light"
-            id="startGmeButton"
-          >
-            Play!
-          </button>
 
           </div>
-</div>
-
-          <div class="row">
-            <div class="col-sm-6 left-text">
-              <div id="score">Score : 0</div>
-          </div>
-          
-          <div class="col-sm-6 right-text">
-            <a href="highscores.html">High Scores</a>
-          </div>
-          
-          </div>
-</div>
-
-
-
-
 
 
           <div id="gameContent">
@@ -101,15 +77,52 @@
           </div>
 
           <div id="quizContent">
-            <div id="questionNumber" class="gameFontQuestionTitle"></div>
-            <div id="question-title" class="directionFont"></div>
+            <div id="questionNumber" class="center-text"></div>
+            <div id="question-title"></div>
 
-            <div id="choices" class="directionFont buttonsOver"></div>
+            <div id="choices"></div>
 
-            <div id="questions" class="hide">
+            <div id="questions">
               <div id="result" style="visibility: hidden;"></div>
             </div>
           </div>
+
+
+
+          <div class="row row-offset">
+            <div class="col-sm-12 center-text">
+          <button
+            type="button"
+            class="btn btn-light"
+            id="startGameButton"
+          >
+            Play!
+          </button>
+
+          </div>
+</div>
+
+
+          <div class="row">
+            <div class="col-sm-6 bottom-text">
+              <div id="score">Score : 0</div>
+          </div>
+          
+          <div class="col-sm-6 bottom-text">
+            <a href="highscores.html">High Scores</a>
+          </div>
+          
+          </div>
+</div>
+
+
+
+
+
+
+
+
+
         </div>
       </div>
     </div>
