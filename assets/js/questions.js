@@ -1,15 +1,12 @@
 //Questions are set up in an array
 //Questions sourced from W3 Schools "https://www.w3schools.com/js/js_quiz.asp"
 
-
-
 var questions = [
   {
     title: "Inside which HTML element do we put the JavaScript?",
     choices: ["<js>", "<javascript>", "<scripting>", "<script>"],
     answer: "<script>",
   },
-
 
   {
     title:

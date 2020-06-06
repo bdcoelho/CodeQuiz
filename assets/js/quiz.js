@@ -12,34 +12,20 @@ var runTimer = function () {
   // Game end time criterion
   // Hide quiz content
 
+  function updateScore() {
+    var userinput = document.querySelector("#initials").value;
+    if (userinput) {
+      parseDate();
+      var retrieveStorage = localStorage["scoreStore"];
+      var quizResults = retrieveStorage ? JSON.parse(retrieveStorage) : [];
 
-
-
-  function updateScore(){
-
-  var userinput = document.querySelector("#initials").value;
-  if (userinput) {
-    parseDate();
-    var retrieveStorage = localStorage["scoreStore"];
-    var quizResults = retrieveStorage ? JSON.parse(retrieveStorage) : [];
-  
-    quizResults.push({ ui: userinput, score: score, dmy: today });
-    localStorage["scoreStore"] = JSON.stringify(quizResults);
-    location.reload();
+      quizResults.push({ ui: userinput, score: score, dmy: today });
+      localStorage["scoreStore"] = JSON.stringify(quizResults);
+      location.reload();
+    } else {
+      location.reload();
+    }
   }
-  else{
-    location.reload();
-  }
-
-
-
-      
-}
-
-
-
-
-
 
   if (timeLeft < 1) {
     gameOver = true;
@@ -50,25 +36,16 @@ var runTimer = function () {
     document.querySelector("#FrontInfoBox").setAttribute("class", "gameOver");
     document.querySelector("#result").style = "visibility:hidden;";
     questionIndex = 0;
-    document.querySelector("#saveMyScore").setAttribute("class", "default-visible");
-
-
-
-
-    
+    document
+      .querySelector("#saveMyScore")
+      .setAttribute("class", "default-visible");
 
     scoreSubmit.addEventListener("click", updateScore, false);
-
-
-
-
-
-
   } else {
-    document.querySelector("#saveMyScore").setAttribute("class", "default-hidden");
-
+    document
+      .querySelector("#saveMyScore")
+      .setAttribute("class", "default-hidden");
   }
-
 
   if (timeLeft > 0) {
     timeLeft--;
@@ -109,7 +86,7 @@ function rollQuestions() {
 
     choiceNode.setAttribute("id", "Btn" + i);
 
-    choiceNode.textContent =  choice;
+    choiceNode.textContent = choice;
 
     choiceNode.onclick = questionClickFunction;
 
@@ -168,8 +145,6 @@ function startGame() {
   document.querySelector("#FrontInfoBox").setAttribute("class", "no-display");
 
   document.querySelector("#play-button").setAttribute("class", "no-display");
-
-
 
   gameOver = false;
   score = 0;
