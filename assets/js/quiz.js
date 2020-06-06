@@ -12,6 +12,35 @@ var runTimer = function () {
   // Game end time criterion
   // Hide quiz content
 
+
+
+
+  function updateScore(){
+
+  var userinput = document.getElementById("initials").value;
+  if (userinput) {
+    parseDate();
+    var getStorageInfo = localStorage["scoreStore"];
+    var quizResults = getStorageInfo ? JSON.parse(getStorageInfo) : [];
+  
+    quizResults.push({ ui: userinput, score: score, dmy: today });
+    localStorage["scoreStore"] = JSON.stringify(quizResults);
+    location.reload();
+  }
+  else{
+    location.reload();
+  }
+
+
+
+      
+}
+
+
+
+
+
+
   if (timeLeft < 1) {
     gameOver = true;
     document.querySelector("#quizContent").style = "visibility:hidden";
@@ -22,6 +51,16 @@ var runTimer = function () {
     document.querySelector("#result").style = "visibility:hidden;";
     questionIndex = 0;
     document.getElementById("saveMyScore").setAttribute("class", "default-visible");
+
+
+
+
+    
+
+    scoreSubmit.addEventListener("click", updateScore, false);
+
+
+
 
 
 
@@ -129,23 +168,6 @@ function startGame() {
   document.querySelector("#FrontInfoBox").setAttribute("class", "no-display");
 
   document.querySelector("#play-button").setAttribute("class", "no-display");
-
-  var userinput = document.getElementById("initials").value;
-
-
-
-
-  if (userinput) {
-    parseDate();
-    var getStorageInfo = localStorage["scoreStore"];
-    var quizResults = getStorageInfo ? JSON.parse(getStorageInfo) : [];
-	
-	        const old = quizResults.find((r) => r.ui === userinput);
-
-    quizResults.push({ ui: userinput, score: score, dmy: today });
-    localStorage["scoreStore"] = JSON.stringify(quizResults);
-  }
-
 
 
 
