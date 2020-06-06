@@ -12,10 +12,33 @@ function renderTableHS() {
         var userInitials = score.ui;
         var userScore = score.score;
         var gameDate = score.dmy;
-        var scoreElement = document.createElement("div");
-        scoreElement.innerHTML = userInitials + " ... " + userScore + " ... " + gameDate;
-        var substrateList = document.querySelector("#hsList");
-        substrateList.appendChild(scoreElement);
+
+
+        var theTable = document.getElementById("myTable")
+
+
+
+        var scoreElement = document.createElement("TR");  
+        var newName = document.createElement("TH");  
+        var newScore = document.createElement("TH");  
+        var newDate = document.createElement("TH");
+
+
+        newName.innerHTML=userInitials
+        newScore.innerHTML=userScore
+        newDate.innerHTML=gameDate
+
+
+        scoreElement.appendChild(newName);
+        scoreElement.appendChild(newScore);
+        scoreElement.appendChild(newDate);
+
+
+        theTable.appendChild(scoreElement);
+
+
+
+        
       });
     } else {
       var scoreElement = document.createElement("div");
