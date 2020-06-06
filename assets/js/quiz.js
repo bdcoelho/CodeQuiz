@@ -7,27 +7,37 @@ var timer;
 var responseBox = document.querySelector("#result");
 var gameOver = false;
 
+
+// A function to create a timer 
 function timerFunction() {
   clearInterval(timer);
   runTimer();
   timer = setInterval(runTimer, 1000);
 }
 
-var runTimer = function () {
-  function updateScore() {
-    var userinput = document.querySelector("#initials").value;
-    if (userinput) {
-      parseDate();
-      var retrieveStorage = localStorage["scoreStore"];
-      var quizResults = retrieveStorage ? JSON.parse(retrieveStorage) : [];
 
-      quizResults.push({ ui: userinput, score: score, dmy: today });
-      localStorage["scoreStore"] = JSON.stringify(quizResults);
-      location.reload();
-    } else {
-      location.reload();
-    }
+
+
+// A function to collect user initials and score to populate the high scores table
+
+function updateScore() {
+  var userinput = document.querySelector("#initials").value;
+  if (userinput) {
+    parseDate();
+    var retrieveStorage = localStorage["scoreStore"];
+    var quizResults = retrieveStorage ? JSON.parse(retrieveStorage) : [];
+
+    quizResults.push({ ui: userinput, score: score, dmy: today });
+    localStorage["scoreStore"] = JSON.stringify(quizResults);
+    location.reload();
+  } else {
+    location.reload();
   }
+}
+
+
+// Conditions to execute if the timer is stopped or running
+var runTimer = function () {
 
   if (timeLeft < 1) {
     gameOver = true;
@@ -86,7 +96,7 @@ function questionClickFunction() {
 
   setTimeout(function () {
     responseBox.setAttribute("style", "visibility:hidden");
-  }, 2000);
+  }, 1000);
 
   questionIndex++;
 
@@ -95,7 +105,7 @@ function questionClickFunction() {
   } else {
     setTimeout(() => {
       qSelector();
-    }, 2000);
+    }, 500);
   }
 }
 
