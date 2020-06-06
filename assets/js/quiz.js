@@ -134,9 +134,9 @@ function startGame() {
     parseDate();
 
     var getStorageInfo = localStorage["scoreStore"];
-    var results = getStorageInfo ? JSON.parse(getStorageInfo) : [];
-    results.push({ ui: userinput, score: score, dmy: today });
-    localStorage["scoreStore"] = JSON.stringify(results);
+    var quizResults = getStorageInfo ? JSON.parse(getStorageInfo) : [];
+    quizResults.push({ ui: userinput, score: score, dmy: today });
+    localStorage["scoreStore"] = JSON.stringify(quizResults);
   }
 
   gameOver = false;
