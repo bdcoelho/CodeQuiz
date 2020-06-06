@@ -24,16 +24,16 @@ Below are some screenshots of the application
 
 
 ### Home page
-![Mobile Screenshot](https://github.com/bdcoelho/bdcoelho.github.io/blob/master/img/mobile.png "Mobile Screenshot")
+![Home page](https://github.com/bdcoelho/CodeQuiz/blob/master/assets/images/fs.png "Home page")
 
 
 
 ### Gameplay - Question Screen
-![Mobile Screenshot](https://github.com/bdcoelho/bdcoelho.github.io/blob/master/img/mobile.png "Mobile Screenshot")
+![Gameplay](https://github.com/bdcoelho/CodeQuiz/blob/master/assets/images/gp.png "Gameplay")
 
 
 
 ### High Scores Screen
 
 
-![Mobile Screenshot](https://github.com/bdcoelho/bdcoelho.github.io/blob/master/img/mobile.png "Mobile Screenshot")
+![High Scores Screen](https://github.com/bdcoelho/CodeQuiz/blob/master/assets/images/hs.png "High Scores Screen")
