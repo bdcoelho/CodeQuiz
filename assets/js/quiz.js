@@ -68,7 +68,7 @@ function rollQuestions() {
 
     choiceNode.setAttribute("id", "Btn" + i);
 
-    choiceNode.textContent = i + 1 + ". " + choice;
+    choiceNode.textContent =  choice;
 
     choiceNode.onclick = questionClickFunction;
 
