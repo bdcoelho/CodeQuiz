@@ -3,6 +3,8 @@ The code quiz presents a set of questions about javascript to the user. The quiz
 
 The questions are selected from a publicly available source ("https://www.w3schools.com/js/js_quiz.asp"). Scores are stored locally on the user's browser and will not be lost if the browser is refreshed or reopened. The scores are sorted from high to low.
 
+The application is built to be responsive across a range of screen sizes.
+
 ## Acceptance Criteria
 * GIVEN I am taking a code quiz
 * WHEN I click the start button
