@@ -1,6 +1,6 @@
 * Do highscores table
 * Timer should not show negative
-* REMOVE DELAY BETWEEN QUESTIONS
+* FIX DELAY BETWEEN QUESTIONS
 
 
 
