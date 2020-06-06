@@ -17,7 +17,7 @@ var runTimer = function () {
 
   function updateScore(){
 
-  var userinput = document.getElementById("initials").value;
+  var userinput = document.querySelector("#initials").value;
   if (userinput) {
     parseDate();
     var retrieveStorage = localStorage["scoreStore"];
@@ -50,7 +50,7 @@ var runTimer = function () {
     document.querySelector("#FrontInfoBox").setAttribute("class", "gameOver");
     document.querySelector("#result").style = "visibility:hidden;";
     questionIndex = 0;
-    document.getElementById("saveMyScore").setAttribute("class", "default-visible");
+    document.querySelector("#saveMyScore").setAttribute("class", "default-visible");
 
 
 
@@ -65,7 +65,7 @@ var runTimer = function () {
 
 
   } else {
-    document.getElementById("saveMyScore").setAttribute("class", "default-hidden");
+    document.querySelector("#saveMyScore").setAttribute("class", "default-hidden");
 
   }
 
@@ -76,8 +76,8 @@ var runTimer = function () {
     clearInterval(timer);
   }
 
-  document.getElementById("progressBar").value = 60 - timeLeft + 1;
-  document.getElementById("counter").innerText = timeLeft + " seconds";
+  document.querySelector("#progressBar").value = 60 - timeLeft + 1;
+  document.querySelector("#counter").innerText = timeLeft + " seconds";
 };
 
 function timerFunction() {
@@ -89,11 +89,11 @@ function timerFunction() {
 function rollQuestions() {
   var currentQuestion = questions[questionIndex];
   var showThisQuestion = questionIndex + 1;
-  document.getElementById("questionNumber").innerText =
+  document.querySelector("#questionNumber").innerText =
     "Question " + showThisQuestion;
-  document.getElementById("question-title").innerText = currentQuestion.title;
+  document.querySelector("#question-title").innerText = currentQuestion.title;
 
-  var theChoices = document.getElementById("choices");
+  var theChoices = document.querySelector("#choices");
   theChoices.innerHTML = "";
 
   currentQuestion.choices.forEach(function (choice, i) {
@@ -126,10 +126,10 @@ function questionClickFunction() {
     timeLeft -= 15;
 
     document.getElementById(this.id).classList.add("apply-shake");
-    document.getElementById("counter").classList.add("explode");
+    document.querySelector("#counter").classList.add("explode");
 
     setTimeout(function () {
-      document.getElementById("counter").classList.remove("explode");
+      document.querySelector("#counter").classList.remove("explode");
     }, 1000);
 
     responseBox.setAttribute("class", "incorrect");
@@ -138,7 +138,7 @@ function questionClickFunction() {
     responseBox.setAttribute("class", "correct");
     responseBox.textContent = "Correct!";
     score = score + 1;
-    document.getElementById("score").innerHTML = "Score : " + score;
+    document.querySelector("#score").innerHTML = "Score : " + score;
   }
 
   setTimeout(function () {
@@ -176,7 +176,7 @@ function startGame() {
   timeLeft = 60;
   var questionIndex = 0;
 
-  document.getElementById("score").innerHTML = "Score : " + score;
+  document.querySelector("#score").innerHTML = "Score : " + score;
   document.querySelector("#quizContent").style = "visibility:visible";
   document.querySelector("#gameContent").style = "display:none";
 

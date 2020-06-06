@@ -14,14 +14,14 @@ function renderTableHS() {
         var gameDate = score.dmy;
         var scoreElement = document.createElement("div");
         scoreElement.innerHTML = userInitials + " ... " + userScore + " ... " + gameDate;
-        var substrateList = document.getElementById("hsList");
+        var substrateList = document.querySelector("#hsList");
         substrateList.appendChild(scoreElement);
       });
     } else {
       var scoreElement = document.createElement("div");
       scoreElement.innerHTML = "No high scores ... yet";
       scoreElement.setAttribute("class", "highscores gameoverdahdah");
-      var substrateList = document.getElementById("hsList");
+      var substrateList = document.querySelector("#hsList");
       substrateList.appendChild(scoreElement);
     }
   }
