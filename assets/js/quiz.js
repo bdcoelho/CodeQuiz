@@ -20,8 +20,8 @@ var runTimer = function () {
   var userinput = document.getElementById("initials").value;
   if (userinput) {
     parseDate();
-    var getStorageInfo = localStorage["scoreStore"];
-    var quizResults = getStorageInfo ? JSON.parse(getStorageInfo) : [];
+    var retrieveStorage = localStorage["scoreStore"];
+    var quizResults = retrieveStorage ? JSON.parse(retrieveStorage) : [];
   
     quizResults.push({ ui: userinput, score: score, dmy: today });
     localStorage["scoreStore"] = JSON.stringify(quizResults);
