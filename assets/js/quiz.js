@@ -1,17 +1,19 @@
 // set global variables
-
 var timeLeft = 60;
-var questionIndex = 0;
-var responseBox = document.querySelector("#result");
 var playerScore = document.querySelector("#score").innerHTML;
 var score = 0;
-var gameOver = false;
+var questionIndex = 0;
 var timer;
+var responseBox = document.querySelector("#result");
+var gameOver = false;
+
+function timerFunction() {
+  clearInterval(timer);
+  runTimer();
+  timer = setInterval(runTimer, 1000);
+}
 
 var runTimer = function () {
-  // Game end time criterion
-  // Hide quiz content
-
   function updateScore() {
     var userinput = document.querySelector("#initials").value;
     if (userinput) {
@@ -29,11 +31,12 @@ var runTimer = function () {
 
   if (timeLeft < 1) {
     gameOver = true;
-    document.querySelector("#quizContent").style = "visibility:hidden";
     document.querySelector("#gameContent").style = "display:block";
+    document.querySelector("#quizContent").style = "visibility:hidden";
+    document.querySelector("#FrontInfoBox").setAttribute("class", "gameOver");
     document.querySelector("#FrontInfoBox").innerHTML =
       "Time's Up! <br> Your Final Score : " + score;
-    document.querySelector("#FrontInfoBox").setAttribute("class", "gameOver");
+
     document.querySelector("#result").style = "visibility:hidden;";
     questionIndex = 0;
     document
@@ -57,50 +60,13 @@ var runTimer = function () {
   document.querySelector("#counter").innerText = timeLeft + " seconds";
 };
 
-function timerFunction() {
-  clearInterval(timer);
-  runTimer();
-  timer = setInterval(runTimer, 1000);
-}
-
-function rollQuestions() {
-  var currentQuestion = questions[questionIndex];
-  var showThisQuestion = questionIndex + 1;
-  document.querySelector("#questionNumber").innerText =
-    "Question " + showThisQuestion;
-  document.querySelector("#question-title").innerText = currentQuestion.title;
-
-  var theChoices = document.querySelector("#choices");
-  theChoices.innerHTML = "";
-
-  currentQuestion.choices.forEach(function (choice, i) {
-    var theAnswer = currentQuestion.answer;
-
-    var choiceNode = document.createElement("button");
-
-    choiceNode.setAttribute("value", choice);
-
-    choiceNode.setAttribute("type", "button");
-
-    choiceNode.setAttribute("class", "btn btn-outline-info");
-
-    choiceNode.setAttribute("id", "Btn" + i);
-
-    choiceNode.textContent = choice;
-
-    choiceNode.onclick = questionClickFunction;
-
-    theChoices.appendChild(choiceNode);
-  });
-}
-
 function questionClickFunction() {
   $("#choices").children().attr("disabled", "disabled");
 
   responseBox.setAttribute("style", "visibility:visible");
 
   if (this.value !== questions[questionIndex].answer) {
-    timeLeft -= 15;
+    timeLeft -= 5;
 
     document.getElementById(this.id).classList.add("apply-shake");
     document.querySelector("#counter").classList.add("explode");
@@ -128,7 +94,7 @@ function questionClickFunction() {
     timeLeft = 0;
   } else {
     setTimeout(() => {
-      rollQuestions();
+      qSelector();
     }, 2000);
   }
 }
@@ -157,9 +123,36 @@ function startGame() {
 
   timerFunction();
 
-  rollQuestions();
+  qSelector();
 }
+function qSelector() {
+  var currentQuestion = questions[questionIndex];
+  var showThisQuestion = questionIndex + 1;
+  document.querySelector("#questionNumber").innerText =
+    "Question " + showThisQuestion;
+  document.querySelector("#question-title").innerText = currentQuestion.title;
 
+  var theChoices = document.querySelector("#choices");
+  theChoices.innerHTML = "";
+
+  currentQuestion.choices.forEach(function (choice, i) {
+    var theAnswer = currentQuestion.answer;
+
+    var optionElement = document.createElement("button");
+
+    optionElement.setAttribute("value", choice);
+
+    optionElement.setAttribute("type", "button");
+
+    optionElement.setAttribute("class", "btn btn-outline-info");
+
+    optionElement.setAttribute("id", "Btn" + i);
+
+    optionElement.textContent = choice;
+
+    optionElement.onclick = questionClickFunction;
+
+    theChoices.appendChild(optionElement);
+  });
+}
 startGameButton.addEventListener("click", startGame, false);
-
-// TODO Submit after enter initials, not play game
