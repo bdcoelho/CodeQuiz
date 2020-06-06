@@ -133,10 +133,10 @@ function startGame() {
   if (userinput) {
     parseDate();
 
-    var getStorageInfo = localStorage["browsergame"];
+    var getStorageInfo = localStorage["scoreStore"];
     var results = getStorageInfo ? JSON.parse(getStorageInfo) : [];
     results.push({ ui: userinput, score: score, dmy: today });
-    localStorage["browsergame"] = JSON.stringify(results);
+    localStorage["scoreStore"] = JSON.stringify(results);
   }
 
   gameOver = false;
