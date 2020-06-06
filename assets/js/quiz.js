@@ -47,25 +47,24 @@ function timerFunction() {
 function rollQuestions() {
   var currentQuestion = questions[questionIndex];
   var showThisQuestion = questionIndex + 1;
-  document.getElementById("questionNumber").innerText = "Question " + showThisQuestion;
-  console.log(currentQuestion)
+  document.getElementById("questionNumber").innerText =
+    "Question " + showThisQuestion;
+  console.log(currentQuestion);
   document.getElementById("question-title").innerText = currentQuestion.title;
 
   var theChoices = document.getElementById("choices");
   theChoices.innerHTML = "";
 
   currentQuestion.choices.forEach(function (choice, i) {
-
     var theAnswer = currentQuestion.answer;
-
-
 
     var choiceNode = document.createElement("button");
 
-
     choiceNode.setAttribute("value", choice);
 
-    choiceNode.setAttribute("class", "btn btn-light customButton");
+    choiceNode.setAttribute("type", "button");
+
+    choiceNode.setAttribute("class", "btn btn-outline-info");
 
     choiceNode.setAttribute("id", "Btn" + i);
 
@@ -126,6 +125,8 @@ function parseDate() {
 
 function startGame() {
   document.querySelector("#FrontInfoBox").setAttribute("class", "no-display");
+
+  document.querySelector("#play-button").setAttribute("class", "no-display");
 
   var userinput = document.getElementById("initials").value;
 

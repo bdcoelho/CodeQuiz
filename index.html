@@ -17,115 +17,88 @@
   </head>
 
   <body>
-
-
-
-
-
     <!-- the progress bar and countdown timer -->
     <div class="container fluid">
-
       <div class="row">
-
         <h1 class="center-heading">
           Code Quiz!
         </h1>
-    
-
       </div>
 
-      <div class="row">
-        <div class="col-sm-12 col-md-8 offset-md-2 main-column">
+      <div class="col-sm-12 col-md-8 offset-md-2 main-column">
+        <div class="row">
+          <div class="col-sm-12">
+            <div id="counter" class="center-text">60 Seconds</div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-sm-12">
+            <progress value="0" max="60" id="progressBar"></progress>
+          </div>
+        </div>
+
+        <div id="FrontInfoBox" class="row">
+          <div class="col-sm-11 offset-sm-1 intro-text">
+            Are you ready to test your coding knowledge?
+          </div>
+          <div class="col-sm-11 offset-sm-1">
+            <ul class="default-visible intro-list">
+              <li>Click Play to begin.</li>
+              <li>Answer as many questions as possible!</li>
+              <li>
+                A five second penalty is applied for each incorrect answer
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div id="gameContent">
+          <div id="saveScore" class="default-hidden">
+            <p>
+              High Score - Enter Initials :
+              <input type="text" id="initials" />
+            </p>
+          </div>
+        </div>
+
+        <div id="quizContent">
+          <div id="questionNumber" class="center-text"></div>
           <div class="row">
-            <div class="col-sm-12">
-              <div id="counter" class="center-text">60 Seconds</div>
+            <div class="col-sm-11 offset-sm-1">
+              <div id="question-title" class="q-style"></div>
+
+              <div id="choices" class="btn-group-vertical choice-list"></div>
             </div>
-          </div>
-
-          <div class="row">
-            <div class="col-sm-12">
-              <progress value="0" max="60" id="progressBar"></progress>
-            </div>
-          </div>
-
-          <div class="row intro">
-            <div class="col-sm-12 intro-text">
-              Are you ready to test your coding knowledge?
-            </div>
-              <ul id="FrontInfoBox" class="default-visible intro-list">
-                <li>Click Play to begin.</li>
-                <li>Answer as many questions as possible!</li>
-                <li>
-                  A five second penalty is applied for each incorrect
-                  answer
-                </li>
-              </ul>
-
-          </div>
 
 
-          <div id="gameContent">
-            <div id="saveScore" class="default-hidden">
-              <p>
-                High Score - Enter Initials :
-                <input type="text" id="initials" />
-              </p>
-            </div>
-            <br />
-
-            <br /><br />
-          </div>
-
-          <div id="quizContent">
-            <div id="questionNumber" class="center-text"></div>
-            <div id="question-title"></div>
-
-            <div id="choices"></div>
-
-            <div id="questions">
-              <div id="result" style="visibility: hidden;"></div>
-            </div>
-          </div>
-
-
-
-          <div class="row row-offset">
-            <div class="col-sm-12 center-text">
-          <button
-            type="button"
-            class="btn btn-light"
-            id="startGameButton"
-          >
-            Play!
-          </button>
-
-          </div>
-</div>
-
-
-          <div class="row">
-            <div class="col-sm-6 bottom-text">
-              <div id="score">Score : 0</div>
           </div>
           
-          <div class="col-sm-6 bottom-text">
-            <a href="highscores.html">High Scores</a>
-          </div>
-          
-          </div>
-</div>
-
-
-
-
-
-
-
+          <div id="result" class="default-invisible center-text"></div>
 
 
         </div>
+
+        <div id="play-button" class="row row-offset">
+          <div class="col-sm-12 center-text">
+            <button type="button" class="btn btn-light" id="startGameButton">
+              Play!
+            </button>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-sm-6 bottom-text">
+            <div id="score">Score : 0</div>
+          </div>
+
+          <div class="col-sm-6 bottom-text">
+            <a href="highscores.html">High Scores</a>
+          </div>
+        </div>
       </div>
     </div>
+    <div class="btn-group"></div>
 
     <script src="assets/js/quiz.js"></script>
     <script src="assets/js/questions.js"></script>

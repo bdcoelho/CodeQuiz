@@ -15,14 +15,27 @@ padding-top: 3%;
 padding-bottom: 3%;
 }
 
-.intro-list {
+
+.choice-list{
+
+margin-left: 5%;
+
+}
+
+
+.q-style
+{
   margin-top: 3%;
+  margin-bottom: 3%;
+
+font-size: 120%;
 
 }
-.intro{
-margin: auto 14%;
+.intro-list {
+  margin-top: 2%;
 
 }
+
 li {
   line-height: 1.5;
   list-style-type: circle;
@@ -41,7 +54,7 @@ li {
 }
 
 .row-offset{
-padding-top: 10%;
+padding-top: 1%;
 }
 
 
@@ -76,19 +89,27 @@ padding-top: 10%;
 .correct {
   color: green;
   font-weight: bolder;
+  text-align: center;
 }
 
 .incorrect {
   color: red;
   font-weight: bolder;
+  text-align: center;
+
 }
 .default-hidden {
-  visibility: hidden;
+  display: none;
 }
 
 .default-visible {
   visibility: visible;
 }
+.default-invisible {
+  visibility: hidden;
+}
+
+
 
 .no-display {
   display: none;
@@ -115,4 +136,24 @@ a:active {
 .customButton{
 margin: 1%;
 
+}
+
+
+.btn-group button {
+  background-color: #4CAF50; /* Green background */
+  border: 1px solid green; /* Green border */
+  color: white; /* White text */
+  padding: 10px 24px; /* Some padding */
+  cursor: pointer; /* Pointer/hand icon */
+  width: 50%; /* Set a width if needed */
+  display: block;
+}
+
+.btn-group button:not(:last-child) {
+  border-bottom: none; /* Prevent double borders */
+}
+
+/* Add a background color on hover */
+.btn-group button:hover {
+  background-color: #3e8e41;
 }

@@ -1,6 +1,5 @@
 //Questions are set up in an array
-//TODO
-
+//Questions sourced from W3 Schools "https://www.w3schools.com/js/js_quiz.asp"
 
 
 
@@ -10,27 +9,8 @@ var questions = [
     choices: ["<js>", "<javascript>", "<scripting>", "<script>"],
     answer: "<script>",
   },
-  {
-    title:
-      "What is the correct JavaScript syntax to change the content of the HTML element below?",
-    choices: [
-      "#demo.innerHTML = 'Hello World!';",
-      "document.getElementById('demo').innerHTML = 'Hello World!';",
-      "document.getElementByName('p').innerHTML = 'Hello World!';",
-      "document.getElement('p').innerHTML = 'Hello World!';",
-    ],
-    answer: "document.getElementById('demo').innerHTML = 'Hello World!';",
-  },
-  {
-    title: "Where is the correct place to insert a JavaScript?",
-    choices: [
-      "The <head> section",
-      "Both the <head> section and the <body> section are correct",
-      "The <body> section",
-      "It doesn't matter",
-    ],
-    answer: "Both the <head> section and the <body> section are correct",
-  },
+
+
   {
     title:
       "What is the correct syntax for referring to an external script called 'xxx.js'?",
@@ -118,16 +98,7 @@ var questions = [
     ],
     answer: "//This is a comment",
   },
-  {
-    title: "What is the correct way to write a JavaScript array?",
-    choices: [
-      "var colors = (1:'red', 2:'green', 3:'blue')",
-      "var colors = 'red', 'green', 'blue'",
-      "var colors = 1 = ('red'), 2 = ('green'), 3 = ('blue')",
-      "var colors = ['red', 'green', 'blue']",
-    ],
-    answer: "var colors = ['red', 'green', 'blue']",
-  },
+
   {
     title: "How do you round the number 7.25, to the nearest integer?",
     choices: ["Math.rnd(7.25)", "round(7.25)", "rnd(7.25)", "Math.round(7.25)"],
@@ -143,17 +114,7 @@ var questions = [
     choices: ["Structure", "Spelling", "Logic", "Opinion"],
     answer: "Structure",
   },
-  {
-    title:
-      "What is the correct JavaScript syntax for opening a new window called 'w2' ?",
-    choices: [
-      "w2 = window.open('http://www.w3schools.com');",
-      "w2 = window.new('http://www.w3schools.com');",
-      "w2 = window.web('http://www.w3schools.com');",
-      "w2 = window.www('http://www.w3schools.com');",
-    ],
-    answer: "w2 = window.open('http://www.w3schools.com');",
-  },
+
   {
     title: "JavaScript is the same as Java.",
     choices: [
