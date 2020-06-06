@@ -3,12 +3,12 @@
 var timeLeft = 60;
 var questionIndex = 0;
 var responseBox = document.querySelector("#result");
-var playerScore = document.getElementById("score").innerHTML;
+var playerScore = document.querySelector("#score").innerHTML;
 var score = 0;
 var gameOver = false;
 var timer;
 
-var timerRunningFunction = function () {
+var runTimer = function () {
   // Game end time criterion
   // Hide quiz content
 
@@ -17,16 +17,16 @@ var timerRunningFunction = function () {
     document.querySelector("#quizContent").style = "visibility:hidden";
     document.querySelector("#gameContent").style = "display:block";
     document.querySelector("#FrontInfoBox").innerHTML =
-      "GAME OVER <br> Your Final Score : " + score;
+      "Time's Up! <br> Your Final Score : " + score;
     document.querySelector("#FrontInfoBox").setAttribute("class", "gameOver");
     document.querySelector("#result").style = "visibility:hidden;";
     questionIndex = 0;
-    document.getElementById("saveScore").style = "visibility:visible";
+    document.getElementById("saveMyScore").style = "visibility:visible";
   } else {
-    document.getElementById("saveScore").style = "visibility:hidden;";
+    document.getElementById("saveMyScore").style = "visibility:hidden;";
   }
 
-  // document.getElementById("saveScore").style.visibility="hidden"
+  // document.getElementById("saveMyScore").style.visibility="hidden"
 
   if (timeLeft > 0) {
     timeLeft--;
@@ -40,8 +40,8 @@ var timerRunningFunction = function () {
 
 function timerFunction() {
   clearInterval(timer);
-  timerRunningFunction();
-  timer = setInterval(timerRunningFunction, 1000);
+  runTimer();
+  timer = setInterval(runTimer, 1000);
 }
 
 function rollQuestions() {
