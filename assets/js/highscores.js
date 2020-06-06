@@ -1,10 +1,10 @@
 function getTheHighScores() {
-  var getStorageInfo = localStorage["browsergame"];
+  var getStorageInfo = localStorage["scoreStore"];
   if (getStorageInfo) {
     getStorageInfo = JSON.parse(getStorageInfo);
 
     var byScore = getStorageInfo.slice(0);
-
+var byScore = getStorageInfo.slice(0);
     const topScore = byScore.sort((a, b) => b.score - a.score).slice(0, 8);
     if (topScore.length > 0) {
       topScore.forEach((score) => {

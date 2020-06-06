@@ -21,12 +21,15 @@ var runTimer = function () {
     document.querySelector("#FrontInfoBox").setAttribute("class", "gameOver");
     document.querySelector("#result").style = "visibility:hidden;";
     questionIndex = 0;
-    document.getElementById("saveMyScore").style = "visibility:visible";
+    document.getElementById("saveMyScore").setAttribute("class", "default-visible");
+
+
+
   } else {
-    document.getElementById("saveMyScore").style = "visibility:hidden;";
+    document.getElementById("saveMyScore").setAttribute("class", "default-hidden");
+
   }
 
-  // document.getElementById("saveMyScore").style.visibility="hidden"
 
   if (timeLeft > 0) {
     timeLeft--;
@@ -49,7 +52,6 @@ function rollQuestions() {
   var showThisQuestion = questionIndex + 1;
   document.getElementById("questionNumber").innerText =
     "Question " + showThisQuestion;
-  console.log(currentQuestion);
   document.getElementById("question-title").innerText = currentQuestion.title;
 
   var theChoices = document.getElementById("choices");
@@ -130,14 +132,22 @@ function startGame() {
 
   var userinput = document.getElementById("initials").value;
 
+
+
+
   if (userinput) {
     parseDate();
-
     var getStorageInfo = localStorage["scoreStore"];
     var quizResults = getStorageInfo ? JSON.parse(getStorageInfo) : [];
+	
+	        const old = quizResults.find((r) => r.ui === userinput);
+
     quizResults.push({ ui: userinput, score: score, dmy: today });
     localStorage["scoreStore"] = JSON.stringify(quizResults);
   }
+
+
+
 
   gameOver = false;
   score = 0;
