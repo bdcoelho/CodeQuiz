@@ -5,6 +5,11 @@ The questions are selected from a publicly available source ("https://www.w3scho
 
 The application is built to be responsive across a range of screen sizes.
 
+## Deployed Application
+
+The live application can be accessed here:
+https://bdcoelho.github.io/CodeQuiz/
+
 ## Acceptance Criteria
 * GIVEN I am taking a code quiz
 * WHEN I click the start button
